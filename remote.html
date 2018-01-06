@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remote Control</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="3"><button onclick="callRemote('pow');">POWER</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('volup');">Volume Up</button></td>
+			<td><button onclick="callRemote('volup','start');">Volume Up (hold)</button></td>
+			<td><button onclick="callRemote('volup','stop');">Volume Up (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('voldown');">Volume Down</button></td>
+			<td><button onclick="callRemote('voldown','start');">Volume Down (hold)</button></td>
+			<td><button onclick="callRemote('voldown','stop');">Volume Down (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('chup');">Channel Up</button></td>
+			<td><button onclick="callRemote('chup','start');">Channel Up (hold)</button></td>
+			<td><button onclick="callRemote('chup','stop');">Channel Up (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('chdown');">Channel Down</button></td>
+			<td><button onclick="callRemote('chdown','start');">Channel Down (hold)</button></td>
+			<td><button onclick="callRemote('chdown','stop');">Channel Down (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('mute');">Mute</button></td>
+			<td><button onclick="callRemote('mute','start');">Mute (hold)</button></td>
+			<td><button onclick="callRemote('mute','stop');">Mute (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch0');">Channel 0</button></td>
+			<td><button onclick="callRemote('ch0','start');">Channel 0 (hold)</button></td>
+			<td><button onclick="callRemote('ch0','stop');">Channel 0 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch1');">Channel 1</button></td>
+			<td><button onclick="callRemote('ch1','start');">Channel 1 (hold)</button></td>
+			<td><button onclick="callRemote('ch1','stop');">Channel 1 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch2');">Channel 2</button></td>
+			<td><button onclick="callRemote('ch2','start');">Channel 2 (hold)</button></td>
+			<td><button onclick="callRemote('ch2','stop');">Channel 2 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch3');">Channel 3</button></td>
+			<td><button onclick="callRemote('ch3','start');">Channel 3 (hold)</button></td>
+			<td><button onclick="callRemote('ch3','stop');">Channel 3 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch4');">Channel 4</button></td>
+			<td><button onclick="callRemote('ch4','start');">Channel 4 (hold)</button></td>
+			<td><button onclick="callRemote('ch4','stop');">Channel 4 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch5');">Channel 5</button></td>
+			<td><button onclick="callRemote('ch5','start');">Channel 5 (hold)</button></td>
+			<td><button onclick="callRemote('ch5','stop');">Channel 5 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch6');">Channel 6</button></td>
+			<td><button onclick="callRemote('ch6','start');">Channel 6 (hold)</button></td>
+			<td><button onclick="callRemote('ch6','stop');">Channel 6 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch7');">Channel 7</button></td>
+			<td><button onclick="callRemote('ch7','start');">Channel 7 (hold)</button></td>
+			<td><button onclick="callRemote('ch7','stop');">Channel 7 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch8');">Channel 8</button></td>
+			<td><button onclick="callRemote('ch8','start');">Channel 8 (hold)</button></td>
+			<td><button onclick="callRemote('ch8','stop');">Channel 8 (release)</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="callRemote('ch9');">Channel 9</button></td>
+			<td><button onclick="callRemote('ch9','start');">Channel 9 (hold)</button></td>
+			<td><button onclick="callRemote('ch9','stop');">Channel 9 (release)</button></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+<script type="text/javascript">
+	function callRemote(code, mode){
+		var xhr = new XMLHttpRequest();
+		var str = 'remote.pl?code='+code+(mode?'&mode='+mode:'');
+		xhr.open('GET',str, false);
+		xhr.send();
+	}
+</script>

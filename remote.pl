@@ -26,16 +26,20 @@ $codes{'mute'} = 'KEY_MUTE';
 my $mode;
 my $key =$q->{'code'}; 
 my $code='';
-$code=$codes{ $key};
+if ($key) {
+	$code=$codes{ $key};
 
-if ($q->{'mode'} eq 'start'){
-	$mode='SEND_START';
-} elsif ($q->{'mode'} eq 'stop'){
-	$mode='SEND_STOP';
-}else {$mode='SEND_ONCE'};
+	if ($q->{'mode'} eq 'start'){
+		$mode='SEND_START';
+	} elsif ($q->{'mode'} eq 'stop'){
+		$mode='SEND_STOP';
+	}else {$mode='SEND_ONCE'};
 
-my $str = 'irsend '.$mode.' SAMSUNG '.$code;
-exec($str);
+	my $str = 'irsend '.$mode.' SAMSUNG '.$code;
+	system($str);
+};
 
 print "Content-type: text/plain\n";
 print "success";
+ 
+
